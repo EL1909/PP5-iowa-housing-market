@@ -84,6 +84,11 @@ Although your friend has an excellent understanding of property prices in her ow
 
 We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 
+In order to use the KitchenQuality feature i change it from an object to integer
+|3: Excellent; 2: Good; 1: Typical/Average; 0: Fair|
+
+
+
 As a user, i can select house features that will modify the house price.
 
 ## Hypothesis and how to validate?
