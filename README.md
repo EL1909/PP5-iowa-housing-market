@@ -8,6 +8,7 @@ This is the Code Institute student template for Gitpod. We have preinstalled all
 
 You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use.
 
+
 ## Gitpod Reminders
 
 To log into the Heroku toolbelt CLI:
@@ -159,15 +160,20 @@ Maintenance and Monitoring: We will continuously monitor the ML models' performa
 
 Business Outcomes: By utilizing ML to optimize sales price suggestions,The client will maximize the sales price for the inherited properties. Additionally, the Model can be used with other datasets to be trained in different cities.
 
-1. Information gathering and data collection.
+1. Information gathering and data collection. \\
+
+upload dataset from kaggle
+
 
 2. Data visualization, cleaning, and preparation.
 
+replace object for int.
+
 3. Model training, optimization and validation.
 
-4. Dashboard planning, designing, and development.
+5. Dashboard planning, designing, and development.
 
-5. Dashboard deployment and release.
+6. Dashboard deployment and release.
 
 ## Dashboard Design (Streamlit App User Interface)
 
