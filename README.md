@@ -8,7 +8,6 @@ This is the Code Institute student template for Gitpod. We have preinstalled all
 
 You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-
 ## Gitpod Reminders
 
 To log into the Heroku toolbelt CLI:
@@ -88,23 +87,21 @@ We then created a fictitious user story where predictive analytics can be applie
 In order to use the KitchenQuality feature i change it from an object to integer
 |3: Excellent; 2: Good; 1: Typical/Average; 0: Fair|
 
-
-
 As a user, i can select house features that will modify the house price.
 
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+### List here your project hypothesis(es) and how you envision validating it (them)
 
-After reviewing the dataset I have formulated several hypotheses. These hypotheses will guide the data analysis.
-
-* Some house attributes will affect the price more than others.
-
-Reasoning: Size, construction year and habitable surface affect the prices in different manners, by analysing this historic information from the dataset we will find a guide to fit a price range for our customers properties.
+After reviewing the dataset I have formulated two hypotheses. These hypotheses will guide the data analysis.
 
 * We can predict the sales price for any house in Ames iowa.
 
-Reasoning: By applying the house information and comparing to the database, we can predict a sales price for a particular house.
+Reasoning: By analysing the database records of the transactions made in Ames, state of Iowa, we can predict a sales price for a particular house.
+
+* Some house attributes will affect the price more than others.
+
+Reasoning: Size of the ground floor living area, the basement and the garage affect and help determine prices, by analysing this historic information from the dataset we will find a guide to fit a price range for our customers properties.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -163,7 +160,6 @@ Business Outcomes: By utilizing ML to optimize sales price suggestions,The clien
 1. Information gathering and data collection. \\
 
 upload dataset from kaggle
-
 
 2. Data visualization, cleaning, and preparation.
 
