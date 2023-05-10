@@ -13,7 +13,7 @@ def page_sale_price_study_body():
     df = load_housing_price_data()
 
     # hard copied from sale price study notebook
-    # The 5 variables that correlate to Sale Price
+    # The 6 variables that correlate to Sale Price
     # These variables will be tested on strength to predicting Sale Price
     corr_var_list = ['1stFlrSF', 'GarageArea', 'GrLivArea',
                      'OverallQual', 'TotalBsmtSF', 'YearBuilt']
