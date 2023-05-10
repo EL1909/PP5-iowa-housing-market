@@ -1,53 +1,79 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Gitpod Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use.
-
-## Gitpod Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
-
 # Iowa Housing Market
+
+---
 
 ## Introduction
 
 This is my 5th and last Portfolio Project developed as part of my Full Stack Software Developer and Predictive Analytics studies with Code Institute.
 
-This is a Machine Learning project, It is based on a dataset of Housing market history in Ames, Iowa.
+This is a Data Analytics and Machine Learning project to clean and engineer data for an ML Model that predicts the value of a house in Ames, Iowa and to help visualize the most important features considered when predicting that value.
 
-The Project is both a data analysis and a machine learning application.
+The project is deployed [here](https://www.kaggle.com/codeinstitute/housing-prices-data).
 
-The data analysis helps users understand what factors affect the use of bike insted of other transport services such as bus or subway, the duration of travel, departure and arrival position.
+I will develop the steps taken to accomplish this proyect using an approach to **CRISP-DM** metodology.
 
-The machine learning application allows users to input temperature, humidity, wind speed,...etc information and get predictions of bike rental usage.
+---
 
-The project is deployed here
+# Bussiness Understanding
 
 ## Business Requirements
 
-This is an example of how using public datasets, we can develop Machine Learning tools for analysing the market in order to take accurate decisions.
+This project is an example of how using public datasets, we can develop Machine Learning tools for analysing the market in order to take accurate decisions.
 
-For this example, We took a ficticious caracther named Beberly, she's a Doctor living in Montreal. She received an inheritance from a deceased great-grandfather located in Ames, Iowa.
+For any project, we must focus it's approach to be useful in a bussines perspective. In this example, We took a ficticious caracther named Beberly Crusher, she's a Doctor living in Montreal. She received an inheritance from a deceased great-grandfather located in Ames, Iowa.
 
 As a good friend, she requested us to help in maximising the sales price for the inherited properties.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+Although Dr. Crusher has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
 * 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+## Hypothesis and how to validate?
+
+After reviewing the dataset I have formulated two hypotheses. These hypotheses will guide the data analysis.
+
+1 - We can predict the sales price for any house in Ames iowa.
+
+Reasoning: By analysing the database records of the transactions made in Ames, state of Iowa, we can predict a sales price for a particular house.
+
+2 - Some house attributes will affect the price more than others.
+
+Reasoning: Size of the ground floor living area, the basement and the garage affect and help determine prices, by analysing this historic information from the dataset we will find a guide to fit a price range for our customers properties.
+
+## User Stories
+
+* As a client, i can navigate the dashboard pages easily so that i can get insights from the data analysis.
+* As a client, i can study which are the most important features so that i can understand wich factors modify the prices.
+* As a client, i can input information on the features wit high correlation to the sales price so that i can predict the value of any other house in Ames, Iowa.
+
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
+
+**Problem Statement 1:** The heiress is interested in discovering how house attributes correlate with sale prices. Therefore, she expects data visualizations of the correlated variables against the sale price.
+
+* As a client I want to inspect the data related to the house records, so that i can discover how the house attributes correlate with the sales price.
+* As a client I want to conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to Sale Price, so that I can discover how the house attributes correlate with the sale price.
+* As a client I want to plot the main variables against Sale Price to visualize insights, so that ican discover how the house attributes correlate with the sale price.
+
+**Problem Statement 2:** The heiress is also interested in predicting the house sale prices for her 4 inherited houses, and any other house in Ames, Iowa.
+
+* As a client I want to predict the sale price for a given house. We want to build a ML model, so that the client can predict the house sale price from her inherited houses, and any other house in Ames, Iowa.
+
+In order to do so, we may deliver an ML system that is capable of reliably predicting the summed sales price of the 4 inherited houses.
+
+Either by using conventional ML or Neural Networks to map the relationships between the features and the target.
+
+We agreed with the client an R2 score of at least **0.75** on the train set as well as on the test set.
+
+The data will be explaines and visualized using a dashboard. No API needed for this project.
+
+## ML Business Case
+
+We can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
+
+---
+
+# Data Understanding
 
 ## Dataset Content
 
@@ -84,149 +110,129 @@ Although your friend has an excellent understanding of property prices in her ow
 
 We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 
-In order to use the KitchenQuality feature i change it from an object to integer
-|3: Excellent; 2: Good; 1: Typical/Average; 0: Fair|
+Once the data is loaded we will review it and save a copy in our repository, under the input folder.
 
-As a user, i can select house features that will modify the house price.
+---
 
-## Hypothesis and how to validate?
+# Data Preparation
 
-### List here your project hypothesis(es) and how you envision validating it (them)
+* We'll study the data types and distribution by running a ProfileReport.
 
-After reviewing the dataset I have formulated two hypotheses. These hypotheses will guide the data analysis.
+* We will run correlation studies and PPS method and plot the results in order to find the variables with the most correlation to SalePrice.
 
-* We can predict the sales price for any house in Ames iowa.
+* In order to improve the dataset performance, we will engineer features from the data that have missing
+information and/or non relevant information.  
 
-Reasoning: By analysing the database records of the transactions made in Ames, state of Iowa, we can predict a sales price for a particular house.
+* We look for missing data, run Heatmaps to define feature relevance and check it's distribution.
 
-* Some house attributes will affect the price more than others.
+* We define a cleaning approach for the different variables.
 
-Reasoning: Size of the ground floor living area, the basement and the garage affect and help determine prices, by analysing this historic information from the dataset we will find a guide to fit a price range for our customers properties.
+  * GarageYrBlt | ArbitraryNumberImputer
+  * GarageFinish | CategoricalImputer
+  * BsmtFinType1 | CategoricalImputer
+  * BedroomAbvGr	|ArbitraryNumberImputer
+  * 2ndFlrSF | ArbitraryNumberImputer
+  * LotFrontage | MeanMedianImputer
+  * MasVnrArea | MeanMedianImputer
+  * Enclosed Porch | Drop
+  * WoodDeckSF	| Drop
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+* We turn datatype float to Integer.
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* We split de dataset into Train and Test set.
 
-**Problem Statement 1:** The heiress is interested in discovering how house attributes correlate with sale prices. Therefore, she expects data visualizations of the correlated variables against the sale price.
+## Feature Engineering
 
-**Problem Statement 2:** The heiress is also interested in predicting the house sale prices for her 4 inherited houses, and any other house in Ames, Iowa.
+* We run the custom function from the **Feature-engine lesson** looking for an approach to handle the tasks to implement the feature engineering process.
 
-In order to do so, we may deliver an ML system that is capable of reliably predicting the summed sales price of the 4 inherited houses.
+* We apply **Categorical Encoding, Numerical Transformation and Smart Correlation Selection** transformers.
 
-Either by using conventional ML or Neural Networks to map the relationships between the features and the target.
+---
 
-We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+# Modeling
 
-The data will be explaines and visualized using a dashboard. NO api needed for this project.
+## Regression Model
 
-## ML Business Case
-
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
-
-We can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
-
-The data suggests a regressor (MLM Linear Regresion) where the target is the sale price.
+We will develop ML models that can predict Sale Price based on the input features.The data suggests a regressor (MLM Linear Regresion) where the target is the sale price.
 
 The inputs are house attribute information and the output is the predicted sale price.
 
-Regression Model
-We want an ML model to predict tenure levels, in months, for a prospect expected to churn. A target variable is a discrete number. We consider a regression model, which is supervised and uni-dimensional.
-Our ideal outcome is to provide our sales team with reliable insight into onboarding customers with a higher sense of loyalty.
-The model success metrics are
-At least 0.7 for R2 score, on train and test set
-The ML model is considered a failure if:
-after 12 months of usage, the model's predictions are 50% off more than 30% of the time. Say, a prediction is >50% off if predicted 10 months and the actual value was 2 months.
-The output is defined as a continuous value for tenure in months. It is assumed that this model will predict tenure if the Predict Churn Classifier predicts 1 (yes for churn). If the prospect is online, the prospect will have already provided the input data via a form. If the prospect talks to a salesperson, the salesperson will interview to gather the input data and feed it into the App. The prediction is made on the fly (not in batches).
-Heuristics: Currently, there is no approach to predict the tenure levels for a prospect.
-The training data to fit the model comes from the Telco Customer. This dataset contains about 7 thousand customer records.
-Train data - filter data where Churn == 1, then drop the Churn variable. Target: tenure; features: all other variables, but total charges and customerID
-
-Data Collection: We will collect data on temperature, weather conditions, bike availability, and user rental history.
-
-Data Preprocessing: We will preprocess the data by cleaning and transforming it into a format that can be used for modeling.
-
-Feature Engineering: We will engineer features from the data, such as weather conditions, time of day, location, and day type (holiday, working day, weekend), to optimize bike availability, pricing, and promotions.
-
-Model Development: We will develop ML models that can predict rental usage based on the input features. We will use regression and classification models for this purpose.
-
 Model Evaluation: We will evaluate the ML models using metrics such as mean squared error, accuracy, and precision/recall to ensure they are accurate and effective.
 
-Deployment: Once the ML models are trained and evaluated, we will deploy them into the bike rental system to optimize rental usage based on the input features.
+## Hyperparameter Optimisation
 
-Maintenance and Monitoring: We will continuously monitor the ML models' performance and update them as needed to ensure they are effective and accurate over time.
+* Use default hyperparameters to find most suitable algorithm.
 
-Business Outcomes: By utilizing ML to optimize sales price suggestions,The client will maximize the sales price for the inherited properties. Additionally, the Model can be used with other datasets to be trained in different cities.
+* Run extensive search on most suitable model to find best hyperparameter configuration.
 
-1. Information gathering and data collection. \\
+---
 
-upload dataset from kaggle
+# Evaluation
 
-2. Data visualization, cleaning, and preparation.
+* Evaluate Pipeline performance, Applying Regressor with PCA and
+Explore potential values for PCA n_components.
 
-replace object for int.
+* Refit pipeline with best features in order to improve Model performance.
 
-3. Model training, optimization and validation.
+## Business Outcomes
 
-5. Dashboard planning, designing, and development.
+* By utilizing ML to optimize sales price suggestions,The client will maximize the sales price for the inherited properties. Additionally, the Model could be used with other datasets to be trained in different cities.
 
-6. Dashboard deployment and release.
+* By enhace hyperparameters we improve to 0.80, superior to the client business requirement that was an R2 score of at least 0.75.
+
+---
+
+# Deployment
 
 ## Dashboard Design (Streamlit App User Interface)
-
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
 
 ### Page 1: Quick project summary
 
 A project summary page, showing the project dataset summary and the client's requirements.
 
-Describe Project Dataset
+* Describe Project Dataset
+* State Business Requirements
+* Dataset Content Guidelines
 
-State Business Requirements
+### Page 2:  House Sale Price Study
 
-### Page 2: Price correlation Vs. features
+* State business requirement 1
+  * Checkbox: data inspection on housing sale dataset.
+  * Display the number of rows and columns in the data.
+  * Display the first ten rows of the data.
+  * Display the variables with the strongest correlation to sale price.able
 
-A page listing your findings related to which features have the strongest correlation to the house sale price.
+### Page 3: Price estimatior tool
 
-### Page 3: Price Vs. features graphics
-
-A page displaying the 4 houses' attributes and their respective predicted sale price. It should display a message informing the summed predicted price for all 4 inherited houses. You should add interactive input widgets that allow a user to provide real-time house data to predict the sale price.
+* A page displaying the 4 houses' attributes and their respective predicted sale price.
+* Displays a message informing the summed predicted price for all 4 inherited houses.
 
 ### Page 4: Project Hypothesis and Validation
 
-A page indicating your project hypothesis(es) and how you validated it across the project.
+Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each.
+
+After the data analysis, we can report that:
+1 - An evaluation of sales prices of other houses in the area based on attributes similar to attributes of each of the clients 4 inherited houses should provide a prediction of sales price for each house respectively.
+2 - The correlation analysis shows that the sizes of the ground floor living area, the first floor, the basement and the garage, play a key role in determining house price. In addition, the year the house was built and the overall quality of materials used and the finishes in the house also play a significant role in determining house price.
+
+After conducting the analysis we answered our hypothesis.
+
+1 - We can predict the sales price for any house in Ames iowa.
+
+* Correct. Considering the unique features of each house, we can predict a price by merging the information of features that have high correlatio so Sale Price.
+
+2 - Some house attributes will affect the price more than others.
+
+* Correct. Certain features of the house affect either in a positive or negative way, and we can predict a Sale Price considering this features.
 
 ### Page 5: Model Performance
 
-A technical page displaying your model performance. If you deployed an ML pipeline, you have to display your pipeline steps.
+* Considerations and conclusions after the pipeline is trained
+* Present ML pipeline steps
+* Feature importance
+* Pipeline performance
 
-Considerations and conclusions after the pipeline is trained
-Present ML pipeline steps
-Feature importance
-Pipeline performance
-
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
-
-THERE SHOOULD BE A PAGE FOR EACH MACHINE LEARNING PROJECT.
-
-befre running the stramlit app i had to install pip install altair==4.1.0, wich replaccen the 5.0 version pevioulsly installed. i did this because the streamlit app didnt run he first time and throw an error asking to change the version
-
-## Unfixed Bugs
-
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
-
-Bug1 - This error message suggests that there might be an issue with the installation of the NumPy package, specifically with the build dependencies required to install the package. The error message states that the process failed while preparing metadata (pyproject.toml), which indicates that there might be an issue with the package's setup file.
-
-One possible solution to this issue is to try installing the package again after making sure that all the required dependencies are installed. You could also try upgrading pip and setuptools to the latest version by running the following command:
-
-ERROR: Cannot install -r /workspace/PP5-iowa-housing-market/requirements.txt (line 2) and numpy==1.18.5 because these package versions have conflicting dependencies.
-
-The conflict is caused by:
-    The user requested numpy==1.18.5
-    pandas 1.4.3 depends on numpy>=1.21.0; python_version >= "3.10"
-
-## Deployment
-
-### Heroku
+## Deploying to Heroku
 
 * The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
@@ -239,26 +245,66 @@ The conflict is caused by:
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
+---
+
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* Kaggle | Fetch data
+* Numpy | Manage data
+* Pandas | Profile Report
+* Scikit Learn | Create ML Pipelines, Regressor
+* Matplot | Plot results from correlation studies
+* Seaborn | Plot results from correlation studies
+* Scypy | Matemathical operations
+* Seaborn | Plot results from correlation studies
+
+## Bugs
+
+**Bug1**
+
+To begin with, i started woking on this project using GitPod. I tried to install requirements.txt and i got the first error.
+
+This error message suggests that there might be an issue with the installation of the NumPy package, specifically with the build dependencies required to install the package. The error message states that the process failed while preparing metadata (pyproject.toml), which indicates that there might be an issue with the package's setup file.
+
+One possible solution to this issue is to try installing the package again after making sure that all the required dependencies are installed. You could also try upgrading pip and setuptools to the latest version by running the following command:
+
+ERROR: Cannot install -r /workspace/PP5-iowa-housing-market/requirements.txt (line 2) and numpy==1.18.5 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested numpy==1.18.5
+    pandas 1.4.3 depends on numpy>=1.21.0; python_version >= "3.10"
+
+I went thru Slack in order to find guidance; i was told that this project can't be made o Gitpod, because the python version is intended to work on is 3.8.12 and gitpod allows 3.10 and above.
+
+I stop working in Gitpod and change to Code Anywhere to create a new enviroment there.
+
+**Bug2**
+
+Working in Code Anywhere has been a nightmare.
+
+Many times the workspace didn't even start, most of the times it did after no less than 10 minutes.
+
+While creating jupiter notebooks, The kernel didn't start, and if it finally started, it got frozen by running cells.
+
+But the worst issue i encountered was at the moment of commit to Github. While in Code Anywhere appears to be pushing the code it was not making the commits to github.
+
+I did create the workspace many times, i downloaded copies of the .ypbn files and uploaded to the repository manually; for this reason it may show few commit messages.
+
+**Bug3**
+
+Before running the stramlit app i had to install altair==4.1.0 from terminal, wich replaced the 5.0 version pevioulsly installed. I did this because the streamlit app didnt run he first time and throw an error asking to change the version
+
+**Unfixed Bugs**
+
+At the moment of submitting i found no bugs.
 
 ## Credits  
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
-### Content
-
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+* As suggested in the learning lessons, I followed carefully the Walkthru projects and the Churnometer project, as well as the repository template for this project.
+* The data source for this project was extracted from Kaggle.
 
 ## Acknowledgements (optional)
 
-* In case you would like to thank the people that provided support through this project.
+* To the Code Anywhere team.
+
+---
