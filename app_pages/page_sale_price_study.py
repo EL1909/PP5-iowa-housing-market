@@ -63,7 +63,15 @@ def page_sale_price_study_body():
         f"quality of materials used and the finishes in the house\n\n"
         f" The plots show that the variables, isolated in the correlation ,\n"
         f" study, do indeed have a strong correlation and hence \n"
-        f" possibly strong predictive power for Sale Price.\n"
+        f" possibly strong predictive power for Sale Price.\n\n"
+        f" PLOT INTERPRETATION\n\n"
+        f" Prediction vs Actual values for train and test sets\n\n"
+        f" The blue dot indicates the actual value and its predicted value \n"
+        f" provided by the ML Pipeline for a given datapoint. \n\n"
+        f" The red line indicates where the predicted value in the actual value.\n\n"
+        f" Ideally, the blue dots should follow along the red line. \n"
+        f" We note there are few datapoints when the actual price is greater tha 500k,\n"
+        f" and for these datapoints, the model tends to under estimate the sale price."
     )
 
     # Code copied from "sale price study" notebook

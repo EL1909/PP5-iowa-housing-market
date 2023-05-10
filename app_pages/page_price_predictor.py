@@ -110,11 +110,10 @@ def DrawInputsWidgets():
     # we create input widgets for all features
     col1, col2 = st.beta_columns(2)
     col3, col4 = st.beta_columns(2)
-    col5, col6 = st.beta_columns(2)
 
     # We are using these features to feed the ML pipeline
     # - values copied from check_variables_for_UI() result
-    # '1stFlrSF', 'GarageArea', 'GrLivArea', 'YearBuilt', 'OverallQual', 'TotalBsmtSF'
+    # '1stFlrSF', 'GarageArea', 'GrLivArea', 'YearBuilt'
 
     # create an empty DataFrame, which will be the live data
     X_live = pd.DataFrame([], index=[0])
@@ -132,7 +131,7 @@ def DrawInputsWidgets():
         X_live[feature] = st_widget
 
     with col2:
-        feature = "GrLivArea"
+        feature = "GarageArea"
         st_widget = st.number_input(
             label=feature,
             min_value=df[feature].min()*percentageMin,
@@ -142,7 +141,7 @@ def DrawInputsWidgets():
         X_live[feature] = st_widget
 
     with col3:
-        feature = "GarageArea"
+        feature = "GrLivArea"
         st_widget = st.number_input(
             label=feature,
             min_value=df[feature].min()*percentageMin,
@@ -153,26 +152,6 @@ def DrawInputsWidgets():
 
     with col4:
         feature = "YearBuilt"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
-        X_live[feature] = st_widget
-
-    with col5:
-        feature = "OverallQual"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
-        X_live[feature] = st_widget
-
-    with col6:
-        feature = "TotalBsmtSF"
         st_widget = st.number_input(
             label=feature,
             min_value=df[feature].min()*percentageMin,
