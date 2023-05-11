@@ -19,4 +19,4 @@ xgboost==1.2.1
 #ipywidgets==8.0.2
 altair
 vega_datasets
-protobuf==3.20
+protobuf==3.19
