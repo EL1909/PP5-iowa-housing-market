@@ -294,6 +294,12 @@ I did create the workspace many times, i downloaded copies of the .ypbn files an
 
 Before running the stramlit app i had to install altair==4.1.0 from terminal, wich replaced the 5.0 version pevioulsly installed. I did this because the streamlit app didnt run he first time and throw an error asking to change the version
 
+**Bug4**
+
+In order to deploy to heroku, i had to run heroku CLI command to change the stack to 20.
+To acomplish this i followed the stepts indicated in the readme file originaly included in the Code Institute's template.
+I also modified the runtime.txt file, changing the python version from 3.8.16 to 3.8.12
+
 **Unfixed Bugs**
 
 At the moment of submitting i found no bugs.
