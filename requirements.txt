@@ -17,6 +17,6 @@ xgboost==1.2.1
 #MarkupSafe==2.0.1
 #protobuf==3.20
 #ipywidgets==8.0.2
-altair
+altair==4.1.0
 vega_datasets
-protobuf==3.20.x
+protobuf
