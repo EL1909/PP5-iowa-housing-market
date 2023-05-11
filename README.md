@@ -3,7 +3,6 @@
 * [Live App](https://pp5-iowa-housing.herokuapp.com/).
 * [Repository](https://github.com/EL1909/PP5-iowa-housing-market.git).
 
-
 ---
 
 ## Introduction
@@ -48,20 +47,21 @@ Reasoning: Size of the ground floor living area, the basement and the garage aff
 ## User Stories
 
 * As a client, i can navigate the dashboard pages easily so that i can get insights from the data analysis.
-* As a client, i can study which are the most important features so that i can understand wich factors modify the prices.
+* As a client, i can study which are the most important features so that i can understand which factors modify the prices.
 * As a client, i can input information on the features wit high correlation to the sales price so that i can predict the value of any other house in Ames, Iowa.
+* As a client I want to understand better how the variables are correlated to Sale Price, so that I can discover how the house attributes correlate with the sale price.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 **Problem Statement 1:** The heiress is interested in discovering how house attributes correlate with sale prices. Therefore, she expects data visualizations of the correlated variables against the sale price.
 
-* As a client I want to inspect the data related to the house records, so that i can discover how the house attributes correlate with the sales price.
-* As a client I want to conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to Sale Price, so that I can discover how the house attributes correlate with the sale price.
-* As a client I want to plot the main variables against Sale Price to visualize insights, so that ican discover how the house attributes correlate with the sale price.
+* Inspect the data related to the house records, so that i can discover how the house attributes correlate with the sales price.
+* Conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to Sale Price, so that I can discover how the house attributes correlate with the sale price.
+* Plot the main variables against Sale Price to visualize insights, so that i can discover how the house attributes correlate with the sale price.
 
 **Problem Statement 2:** The heiress is also interested in predicting the house sale prices for her 4 inherited houses, and any other house in Ames, Iowa.
 
-* As a client I want to predict the sale price for a given house. We want to build a ML model, so that the client can predict the house sale price from her inherited houses, and any other house in Ames, Iowa.
+* Predict the sale price for a given house. We want to build a ML model, so that the client can predict the house sale price from her inherited houses, and any other house in Ames, Iowa.
 
 In order to do so, we may deliver an ML system that is capable of reliably predicting the summed sales price of the 4 inherited houses.
 
@@ -124,8 +124,16 @@ Once the data is loaded we will review it and save a copy in our repository, und
 
 * We will run correlation studies and PPS method and plot the results in order to find the variables with the most correlation to SalePrice.
 
+## Feature Engineering
+
 * In order to improve the dataset performance, we will engineer features from the data that have missing
 information and/or non relevant information.  
+
+* We split de dataset into Train and Test set.
+
+* We run the custom function from the **Feature-engine lesson** looking for an approach to handle the tasks to implement the feature engineering process.
+
+* We apply **Categorical Encoding, Numerical Transformation and Smart Correlation Selection** transformers.
 
 * We look for missing data, run Heatmaps to define feature relevance and check it's distribution.
 
@@ -142,14 +150,6 @@ information and/or non relevant information.
   * WoodDeckSF	| Drop
 
 * We turn datatype float to Integer.
-
-* We split de dataset into Train and Test set.
-
-## Feature Engineering
-
-* We run the custom function from the **Feature-engine lesson** looking for an approach to handle the tasks to implement the feature engineering process.
-
-* We apply **Categorical Encoding, Numerical Transformation and Smart Correlation Selection** transformers.
 
 ---
 
@@ -176,7 +176,7 @@ Model Evaluation: We will evaluate the ML models using metrics such as mean squa
 * Evaluate Pipeline performance, Applying Regressor with PCA and
 Explore potential values for PCA n_components.
 
-* Refit pipeline with best features in order to improve Model performance.
+* Run once again the pipeline with best features in order to improve Model performance.
 
 ## Business Outcomes
 
@@ -301,7 +301,7 @@ I did create the workspace many times, i downloaded copies of the .ypbn files an
 
 #### Bug3
 
-Before running the stramlit app i had to install altair==4.1.0 from terminal, wich replaced the 5.0 version pevioulsly installed. I did this because the streamlit app didnt run he first time and throw an error asking to change the version
+Before running the stramlit app i had to install altair==4.1.0 from terminal, wich replaced the 5.0 version previoulsly installed. I did this because the streamlit app didnt run he first time and throw an error asking to change the version
 
 #### Bug4
 
@@ -313,7 +313,7 @@ I also modified the runtime.txt file, changing the python version from 3.8.16 to
 
 Once deployed to Heroku, i was no able to load the dashboard from the navigator. I went to Heroku CLI and typed **heroku logs --tail -a pp5-iowa-housing**
 
-From this error message i found out that i needed to include the altair and vega_datasets in my requirements.txt.
+From this error message i found out that i needed to include the altair, vega_datasets and protobuf in my requirements.txt.
 
 #### Unfixed Bugs
 
