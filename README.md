@@ -1,5 +1,9 @@
 # Iowa Housing Market
 
+* [Live App](https://pp5-iowa-housing.herokuapp.com/).
+* [Repository](https://github.com/EL1909/PP5-iowa-housing-market.git).
+
+
 ---
 
 ## Introduction
@@ -8,7 +12,7 @@ This is my 5th and last Portfolio Project developed as part of my Full Stack Sof
 
 This is a Data Analytics and Machine Learning project to clean and engineer data for an ML Model that predicts the value of a house in Ames, Iowa and to help visualize the most important features considered when predicting that value.
 
-The project is deployed [here](https://www.kaggle.com/codeinstitute/housing-prices-data).
+The project is deployed [here](https://pp5-iowa-housing.herokuapp.com/).
 
 I will develop the steps taken to accomplish this proyect using an approach to **CRISP-DM** metodology.
 
