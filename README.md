@@ -252,11 +252,16 @@ After conducting the analysis we answered our hypothesis.
 * Kaggle | Fetch data
 * Numpy | Manage data
 * Pandas | Profile Report
+* Pandas-profiling | Feature analysis
+* Ppscore | Correlation analysis
 * Scikit Learn | Create ML Pipelines, Regressor
 * Matplot | Plot results from correlation studies
 * Seaborn | Plot results from correlation studies
+* Feature-engine | Feature engineering
+* Xgboost | Regression ML model
 * Scypy | Matemathical operations
 * Seaborn | Plot results from correlation studies
+* Streamlit | Create Dashboard
 
 ## Bugs
 
