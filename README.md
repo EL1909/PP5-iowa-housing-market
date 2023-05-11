@@ -265,7 +265,7 @@ After conducting the analysis we answered our hypothesis.
 
 ## Bugs
 
-**Bug1**
+#### Bug1
 
 To begin with, i started woking on this project using GitPod. I tried to install requirements.txt and i got the first error.
 
@@ -283,7 +283,7 @@ I went thru Slack in order to find guidance; i was told that this project can't 
 
 I stop working in Gitpod and change to Code Anywhere to create a new enviroment there.
 
-**Bug2**
+#### Bug2
 
 Working in Code Anywhere has been a nightmare.
 
@@ -295,17 +295,23 @@ But the worst issue i encountered was at the moment of commit to Github. While i
 
 I did create the workspace many times, i downloaded copies of the .ypbn files and uploaded to the repository manually; for this reason it may show few commit messages.
 
-**Bug3**
+#### Bug3
 
 Before running the stramlit app i had to install altair==4.1.0 from terminal, wich replaced the 5.0 version pevioulsly installed. I did this because the streamlit app didnt run he first time and throw an error asking to change the version
 
-**Bug4**
+#### Bug4
 
 In order to deploy to heroku, i had to run heroku CLI command to change the stack to 20.
 To acomplish this i followed the stepts indicated in the readme file originaly included in the Code Institute's template.
 I also modified the runtime.txt file, changing the python version from 3.8.16 to 3.8.12
 
-**Unfixed Bugs**
+#### Bug5
+
+Once deployed to Heroku, i was no able to load the dashboard from the navigator. I went to Heroku CLI and typed **heroku logs --tail -a pp5-iowa-housing**
+
+From this error message i found out that i needed to include the altair and vega_datasets in my requirements.txt.
+
+#### Unfixed Bugs
 
 At the moment of submitting i found no bugs.
 
